@@ -11,39 +11,39 @@ namespace mywebapi.Controllers
 {
     public class DepartmentController : ApiController
     {
-        private Department[] depts = new Department[]
+        static List<string> department = new List<string>()
         {
-            new Department { deptName = "IT"},
-            new Department { deptName = "Wholesale"},
-            new Department {deptName = "Underwriting"}
+            "Wholesale", "Underwriting", "IT", "Retail", "Arrears"
         };
 
         // GET: api/Department
-        [ResponseType(typeof(IEnumerable<Department>))]
-        public IEnumerable<Department> Get()
+        public IEnumerable<string> Get()
         {
-            return depts;
+            return department;
         }
 
         // GET: api/Department/5
         public string Get(int id)
         {
-            return "value";
+            return department[id];
         }
 
         // POST: api/Department
         public void Post([FromBody]string value)
         {
+            department.Add(value);
         }
 
         // PUT: api/Department/5
         public void Put(int id, [FromBody]string value)
         {
+            department[id] = value;
         }
 
         // DELETE: api/Department/5
         public void Delete(int id)
         {
+            department.RemoveAt(id);
         }
     }
 }
