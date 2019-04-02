@@ -40,13 +40,20 @@ namespace mywebapi.Controllers
         }
 
         // POST: api/Users
-        public void Post([FromBody]string value)
+        public void Post([FromBody]User user)
         {
+            
+            //user.id = 6;
+            //user.name = "Jordan 'Princess' Smith";
+            //user.email = "princesssmith@optimum.com";
+            //user.phone = "02922666555";
+            //user.role = 4;            
         }
 
         // PUT: api/Users/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]User user)
         {
+            users[id] = user;
         }
 
         // DELETE: api/Users/5

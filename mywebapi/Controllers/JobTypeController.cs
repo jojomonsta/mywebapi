@@ -11,15 +11,12 @@ namespace mywebapi.Controllers
 {
     public class JobTypeController : ApiController
     {
-        private JobType[] jobType = new JobType[]
-        {
-            new JobType { jobtype = "Admin"},
-            new JobType { jobtype = "Developer"},
-            new JobType { jobtype = "Senior Tester"}
+        static List<string> jobType = new List<string>()
+        {            
+            "Senior Tester"
         };
         // GET: api/JobType
-        [ResponseType(typeof(IEnumerable<JobType>))]
-        public IEnumerable<JobType> Get()
+        public IEnumerable<string> Get()
         {
             return jobType;
         }
@@ -27,22 +24,28 @@ namespace mywebapi.Controllers
         // GET: api/JobType/5
         public string Get(int id)
         {
-            return "value";
+            return jobType[id];
         }
 
         // POST: api/JobType
-        public void Post([FromBody]string value)
+        public string Post([FromBody]string value)
         {
+            jobType.Add(value);
+            return "Job Type Added";
         }
 
         // PUT: api/JobType/5
-        public void Put(int id, [FromBody]string value)
+        public string Put(int id, [FromBody]string value)
         {
+            jobType[id] = value;
+            return "Job Type amended";
         }
 
         // DELETE: api/JobType/5
-        public void Delete(int id)
+        public string Delete(int id)
         {
+            jobType.RemoveAt(id);
+            return "Job Type deleted";
         }
     }
 }
