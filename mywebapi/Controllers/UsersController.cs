@@ -14,11 +14,11 @@ namespace mywebapi.Controllers
 
         private User[] users = new User[]
         {
-            new User { id = 1, name = "Johanna McMullen", email = "jojomonsta666@gamil.com", phone = "029223312235", role = 1 },
-            new User { id = 2, name = "David McMullen", email = "howlingmadmucky@hotmail.co.uk", phone = "02920331235", role =  2},
-            new User { id = 3, name = "Alexander Williams", email = "alexander.williams@hotmail.com" , phone = "02920564789", role = 2 },
-            new User { id = 4, name = "George Turner", email = "johannamcmullen@hotmail.co.uk", phone = "02920456789", role = 2 },
-            new User { id = 5, name = "Eloise McCarthy", email = "eloise.mccarthy@nhswales.co.uk", phone = "02920587478", role = 3 }
+            new User { Id = 1, Name = "Johanna McMullen", Email = "jojomonsta666@gamil.com", Phone = "029223312235", Role = 1 },
+            new User { Id = 2, Name = "David McMullen", Email = "howlingmadmucky@hotmail.co.uk", Phone = "02920331235", Role =  2},
+            new User { Id = 3, Name = "Alexander Williams", Email = "alexander.williams@hotmail.com" , Phone = "02920564789", Role = 2 },
+            new User { Id = 4, Name = "George Turner", Email = "johannamcmullen@hotmail.co.uk", Phone = "02920456789", Role = 2 },
+            new User { Id = 5, Name = "Eloise McCarthy", Email = "eloise.mccarthy@nhswales.co.uk", Phone = "02920587478", Role = 3 }
         };
 
         // GET: api/Users
@@ -31,7 +31,7 @@ namespace mywebapi.Controllers
         // GET: api/Users/5
         public IHttpActionResult Get(int id)
         {
-            var product = users.FirstOrDefault((p) => p.id == id);
+            var product = users.FirstOrDefault((p) => p.Id == id);
             if (product == null)
             {
                 return NotFound();

@@ -7,10 +7,10 @@ namespace mywebapi.Models
 {
     public class User
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string email { get; set; }
-        public string phone { get; set; }
-        public int role { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public int Role { get; set; }
     }
 }
